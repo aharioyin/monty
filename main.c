@@ -1,5 +1,5 @@
 #include "monty.h"
-context_t context = {NULL, NULL, NULL, 0};
+
 
 /**
 * main - Entry point and intepreter of the Monty code
@@ -16,6 +16,9 @@ int main(int argc, char *argv[])
 	ssize_t nums_reads = 1;
 	stack_t *stack = NULL;
 	unsigned int count = 0;
+
+
+	context_t context = {NULL, NULL, NULL, 0};
 
 	if (argc != 2)
 	{

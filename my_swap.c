@@ -1,29 +1,32 @@
 #include "monty.h"
-/**
- *sub_func- function to subtract
- *@head: stack head
- *@count: line_number
- *Return: no return
- */
-void sub_func(stack_t **head, unsigned int count)
-{
-	stack_t *auxilliary;
-	int subs, items;
 
-	auxilliary = *head;
-	for (items = 0; auxilliary != NULL; items++)
-		auxilliary = auxilliary->next;
-	if (items < 2)
+/**
+ * swap_func - adds the top two elements of the stack.
+ * @head: stack head
+ * @count: line_number
+ * Return: no return
+*/
+void swap_func(stack_t **head, unsigned int count)
+{
+	stack_t *p;
+	int lenght = 0, auxilliary;
+
+	p = *head;
+	while (p)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", count);
+		p = p->next;
+		lenght++;
+	}
+	if (lenght < 2)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", count);
 		fclose(context.fil);
 		free(context.data);
 		free_mem_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	auxilliary = *head;
-	subs = auxilliary->next->n - auxilliary->n;
-	auxilliary->next->n = subs;
-	*head = auxilliary->next;
-	free(auxilliary);
+	p = *head;
+	auxilliary = p->n;
+	p->n = p->next->n;
+	p->next->n = auxilliary;
 }

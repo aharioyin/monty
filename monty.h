@@ -1,6 +1,5 @@
 #ifndef MONTY_H
 #define MONTY_H
-#define  _GNU_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -61,9 +60,9 @@ char *_reallocate(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t get_stdin(char **lineptr, int fil);
 char  *clean_line(char *data);
 void push_func(stack_t **head, unsigned int num);
-void pall_func(stack_t **head, unsigned int num);
+void pall_func(stack_t **head, unsigned int count);
 void pint_func(stack_t **head, unsigned int num);
-int exec(char *data, stack_t **head, unsigned int count, FILE *fil);
+int exec(char *data, stack_t **head, unsigned int count, FILE *fil, context_t context);
 void free_mem_stack(stack_t *head);
 void pop_func(stack_t **head, unsigned int count);
 void swap_func(stack_t **head, unsigned int count);
@@ -81,5 +80,6 @@ void node_add(stack_t **head, int n);
 void queue_add(stack_t **head, int n);
 void queue_func(stack_t **head, unsigned int count);
 void stack_func(stack_t **head, unsigned int count);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
 #endif

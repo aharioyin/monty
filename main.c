@@ -1,5 +1,7 @@
 #include "monty.h"
 
+context_t context = {NULL, NULL, NULL, 0};
+
 /**
 * main - Entry point and intepreter of the Monty code
 * @argc: number of arguments
@@ -36,7 +38,7 @@ int main(int argc, char *argv[])
 		count++;
 		if (nums_reads > 0)
 		{
-			exec(data, &stack, count, fil);
+			exec(data, &stack, count, fil, context);
 		}
 		free(data);
 	}
@@ -44,4 +46,3 @@ int main(int argc, char *argv[])
 	fclose(fil);
 	return (0);
 }
-

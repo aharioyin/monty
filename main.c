@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		count++;
 		if (nums_reads > 0)
 		{
-			exec(data, &stack, count, fil, context);
+			exec(data, &stack, count, fil);
 		}
 		free(data);
 	}

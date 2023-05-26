@@ -29,6 +29,9 @@ int exec(char *data, stack_t **stack, unsigned int count, FILE *fil)
 				{"stack", stack_func},
 				{NULL, NULL}
 				};
+	unsigned int a = 0;
+	char *opCodeptr;
+
 	opCodeptr = strtok(data, " \n\t");
 	if (opCodeptr && opCodeptr[0] == '#')
 		return (0);

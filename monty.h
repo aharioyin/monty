@@ -62,7 +62,7 @@ char  *clean_line(char *data);
 void push_func(stack_t **head, unsigned int num);
 void pall_func(stack_t **head, unsigned int count);
 void pint_func(stack_t **head, unsigned int num);
-int exec(char *data, stack_t **head, unsigned int count, FILE *fil, context_t context);
+int exec(char *data, stack_t **head, unsigned int count, FILE *fil);
 void free_mem_stack(stack_t *head);
 void pop_func(stack_t **head, unsigned int count);
 void swap_func(stack_t **head, unsigned int count);

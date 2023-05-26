@@ -6,11 +6,10 @@
 * @count: line_counter
 * @fil: poiner to monty file
 * @data: line content
-* @context: carries value through the program
 * Return: no return
 */
 
-int exec(char *data, stack_t **stack, unsigned int count, FILE *fil, context_t context)
+int exec(char *data, stack_t **stack, unsigned int count, FILE *fil)
 {
 	instruction_t opst[] = {
 				{"push", push_func}, {"pall", pall_func}, {"pint", pint_func},
@@ -30,23 +29,6 @@ int exec(char *data, stack_t **stack, unsigned int count, FILE *fil, context_t c
 				{"stack", stack_func},
 				{NULL, NULL}
 				};
-	char *arg = context.arg;
-	FILE *fil_ptr = context.fil;
-
-	unsigned int a = 0;
-	char *opCodeptr;
-
-	if (arg != NULL)
-	{
-		printf("Argument: %s\n", arg);
-	}
-	if (fil_ptr != NULL)
-	{
-        	char line[256];
-		fgets(line, sizeof(line), fil_ptr);
-		printf("Read from file: %s\n", line);
-	}
-
 	opCodeptr = strtok(data, " \n\t");
 	if (opCodeptr && opCodeptr[0] == '#')
 		return (0);

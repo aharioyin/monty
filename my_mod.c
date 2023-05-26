@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * mod_func - function that computes the the remainder of 
- *              the division of the second top element 
- *              of the stack by the top element of the stack
+ * mod_func - function that computes the the remainder of
+ * the division of the second top element
+ * of the stack by the top element of the stack
  * @head: stack head
  * @count: line_number
  * Return: no return
@@ -42,3 +42,4 @@ void mod_func(stack_t **head, unsigned int count)
 	*head = p->next;
 	free(p);
 }
+

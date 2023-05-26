@@ -1,5 +1,4 @@
 #include "monty.h"
-context_t context = {NULL, NULL, NULL, 0};
 
 /**
 * main - Entry point and intepreter of the Monty code
@@ -43,5 +42,6 @@ int main(int argc, char *argv[])
 	}
 	free_mem_stack(stack);
 	fclose(fil);
-return (0);
+	return (0);
 }
+
